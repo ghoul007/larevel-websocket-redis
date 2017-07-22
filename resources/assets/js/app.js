@@ -8,11 +8,11 @@
 require('./bootstrap');
 
 
-import Echo  from 'laravel-echo';
+import Echo from "laravel-echo";
 
 let e = new Echo({
     broadcater :'socket.io',
-    host:window.laocation.hostname+':6001'
+    host:window.location.hostname+':6001'
 });
 
 

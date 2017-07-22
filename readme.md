@@ -12,3 +12,4 @@ laravel-echo-server init
 laravel-echo-server start
 
 npm run watch
+http://localhost:6001/socket.io/socket.io.js
