@@ -33,7 +33,7 @@ class PostCreatedEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('chan-demo');
+        return new Channel('chan-demo');
     }
 
 

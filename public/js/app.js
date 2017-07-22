@@ -769,8 +769,12 @@ __webpack_require__(9);
 
 
 var e = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
-  broadcater: 'socket.io',
-  host: window.location.hostname + ':6001'
+    broadcaster: 'socket.io',
+    host: window.location.hostname + ':6001'
+});
+
+e.channel('chan-demo').listen('PostCreatedEvent', function (e) {
+    console.log('--', e);
 });
 
 // window.Vue = require('vue');
