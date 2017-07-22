@@ -10,7 +10,7 @@ class PostController extends Controller
     //
 
     function index(){
-      $event = new PostCreatedEvent();
+      $event = new PostCreatedEvent(['name'=>'title']);
       event($event);
       dd();
     }
