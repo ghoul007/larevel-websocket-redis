@@ -777,6 +777,11 @@ e.channel('chan-demo').listen('PostCreatedEvent', function (e) {
     console.log('--', e);
 });
 
+$('#demo').click(function (e) {
+    e.preventDefault();
+    $.get('/post');
+});
+
 // window.Vue = require('vue');
 //
 // /**

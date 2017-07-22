@@ -2,6 +2,8 @@
 
 @section('content')
 
-    Salut
+<div class="container">
+    <button class="btn btn-default" id="demo">notify</button>
+</div>
 
 @endsection

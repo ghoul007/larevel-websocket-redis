@@ -22,6 +22,11 @@ e.channel('chan-demo')
 });
 
 
+$('#demo').click(function (e) {
+    e.preventDefault();
+    $.get('/post');
+});
+
 
 // window.Vue = require('vue');
 //
