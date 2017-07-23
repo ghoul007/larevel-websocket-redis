@@ -757,7 +757,6 @@ module.exports = __webpack_require__(36);
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_echo__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_laravel_echo__);
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -775,6 +774,12 @@ var e = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 
 e.channel('chan-demo').listen('PostCreatedEvent', function (e) {
     console.log('--', e);
+});
+
+window.demo = e.private('group.1').listen('GroupEvent', function (e) {
+    console.log('GroupEvent : ', e);
+}).listenForWhisper('test', function (e) {
+    console.log('log chuchotement', e);
 });
 
 $('#demo').click(function (e) {

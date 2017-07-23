@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -11,15 +10,24 @@ require('./bootstrap');
 import Echo from "laravel-echo";
 
 let e = new Echo({
-    broadcaster :'socket.io',
-    host:window.location.hostname+':6001'
+    broadcaster: 'socket.io',
+    host: window.location.hostname + ':6001'
 });
 
 
 e.channel('chan-demo')
-.listen('PostCreatedEvent', (e)=>{
-    console.log('--',e);
-});
+    .listen('PostCreatedEvent', (e) => {
+        console.log('--', e);
+    });
+
+window.demo = e.private('group.1')
+    .listen('GroupEvent', (e) => {
+        console.log('GroupEvent : ', e);
+    })
+    .listenForWhisper('test', function (e) {
+        console.log('log chuchotement', e)
+    })
+;
 
 
 $('#demo').click(function (e) {
