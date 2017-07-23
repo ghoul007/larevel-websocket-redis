@@ -34,6 +34,6 @@ class GroupEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('group.'.$this->group->id);
+        return new PresenceChannel('group.'.$this->group->id);
     }
 }

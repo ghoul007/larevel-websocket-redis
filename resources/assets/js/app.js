@@ -20,14 +20,21 @@ e.channel('chan-demo')
         console.log('--', e);
     });
 
-window.demo = e.private('group.1')
-    .listen('GroupEvent', (e) => {
-        console.log('GroupEvent : ', e);
+window.demo = e.join('group.1')
+    .here(function(usr){
+        console.log('log here',usr)
     })
-    .listenForWhisper('test', function (e) {
-        console.log('log chuchotement', e)
+    .joining(function(usr){
+        console.log('log joining',usr)
     })
-;
+    .leaving(function(usr){
+        console.log('log leaving',usr)
+    });
+
+//     .listenForWhisper('test', function (e) {
+//         console.log('log chuchotement', e)
+//     })
+// ;
 
 
 $('#demo').click(function (e) {
