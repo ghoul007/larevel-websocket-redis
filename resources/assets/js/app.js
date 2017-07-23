@@ -31,6 +31,10 @@ window.demo = e.join('group.1')
         console.log('log leaving',usr)
     });
 
+
+e.private('App.user.1').notification(function (notification) {
+    console.log(notification)
+});
 //     .listenForWhisper('test', function (e) {
 //         console.log('log chuchotement', e)
 //     })

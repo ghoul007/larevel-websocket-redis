@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Events\GroupEvent;
 use App\Group;
+use App\Notifications\DemoNotification;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class GroupController extends Controller
 {
@@ -22,7 +24,9 @@ class GroupController extends Controller
     {
 
         $group = Group::find($group_id);
-        broadcast(new GroupEvent($group))->toOthers();
+        $user= Auth::user();
+        $user->notify(new DemoNotification($group));
+//        broadcast(new GroupEvent($group))->toOthers();
         return redirect()->back();
     }
 
